@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kaiora Your Kaiora - Your Kaiora</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link href="loginpage.css" rel="stylesheet">
+    <link rel="icon" href="Favicon.png" type="image/x-png">
+</head>
+<body>
+        <!-- Menu Panel and Overlay -->
+          <div class="menu-overlay"></div>
+  <div class="menu-panel">
+    <nav class="menu-items">
+      <a href="Main Page.html" class="menu-link">Home</a>
+      <a href="lifestyle.html" class="menu-link">KAIORA LIFESTYLE</a>
+      <a href="personalisation.html" class="menu-link">MY KAIORA</a>
+      <a href="inspiring authenticity.html" class="menu-link">INSPIRING Authenticity</a>
+      <a href="contact-us.html" class="menu-link">CONTACT US</a>
+    </nav>
+  </div>
+
+        <div class="menu-overlay"></div>
+
+        <header class="site-header">
+            <button class="menu-toggle" aria-label="Open menu"><span></span><span></span><span></span></button>
+            <a href="#" class="logo">KAIORA</a>
+            <div class="header-actions">
+                <button class="theme-toggle" aria-label="Toggle theme">
+                    <svg class="theme-icon" viewBox="0 0 24 24">
+                        <path class="sun-icon" d="M12,18A6,6 0 0,1 6,12A6,6 0 0,1 12,6A6,6 0 0,1 18,12A6,6 0 0,1 12,18M12,4A8,8 0 0,0 4,12A8,8 0 0,0 12,20A8,8 0 0,0 20,12A8,8 0 0,0 12,4M12,2L14.39,5.42C13.65,5.15 12.84,5 12,5C11.16,5 10.35,5.15 9.61,5.42L12,2M3.34,7L7.5,6.65C6.9,7.16 6.36,7.78 5.94,8.5C5.5,9.24 5.25,10 5.11,10.79L3.34,7M3.36,17L5.12,13.21C5.26,14 5.53,14.78 5.95,15.5C6.37,16.24 6.91,16.86 7.5,17.37L3.36,17M20.65,7L18.88,10.79C18.74,10 18.47,9.24 18.05,8.5C17.63,7.78 17.1,7.15 16.5,6.64L20.65,7M20.64,17L16.5,17.36C17.09,16.85 17.62,16.22 18.04,15.5C18.46,14.77 18.73,14 18.87,13.21L20.64,17Z"/>
+                        <path class="moon-icon" d="M17.75,4.09L15.22,6.03L16.13,9.09L13.5,7.28L10.87,9.09L11.78,6.03L9.25,4.09L12.44,4L13.5,1L14.56,4L17.75,4.09M21.25,11L19.61,12.25L20.2,14.23L18.5,13.06L16.8,14.23L17.39,12.25L15.75,11L17.81,10.95L18.5,9L19.19,10.95L21.25,11M18.97,15.95C19.8,15.87 20.69,17.05 20.16,17.8C19.84,18.25 19.5,18.67 19.08,19.07C15.17,23 8.84,23 4.94,19.07C1.03,15.17 1.03,8.83 4.94,4.93C5.34,4.53 5.76,4.17 6.21,3.85C6.96,3.32 8.14,4.21 8.06,5.04C7.79,7.9 8.75,10.87 10.95,13.06C13.14,15.26 16.1,16.22 18.97,15.95M17.33,17.97C14.5,17.81 11.7,16.64 9.53,14.5C7.36,12.31 6.2,9.5 6.04,6.68C3.23,9.82 3.34,14.4 6.35,17.41C9.37,20.43 14,20.54 17.33,17.97Z" style="display:none;"/>
+                    </svg>
+                </button>
+                <button class="search-btn" aria-label="Search">
+                    <svg viewBox="0 0 24 24"><path d="M15.5,14h-0.79l-0.28-0.27A6.471,6.471,0,0,0,16,9.5,6.5,6.5,0,1,0,9.5,16a6.471,6.471,0,0,0,4.23-1.57l0.27,0.28v0.79l5,4.99L20.49,19Zm-6,0A4.5,4.5,0,1,1,14,9.5,4.505,4.505,0,0,1,9.5,14Z"/></svg>
+                </button>
+            </div>
+        </header>
+
+    <div class="container">
+        <div class="login-header">
+            <h2 class="login-option" onclick="showLoginForm()">Already Registered?</h2>
+            <span class="divider">/</span>
+            <h2 class="login-option" onclick="showRegisterForm()">Create New Account</h2>
+        </div>
+        <div class="login-form" id="loginForm">
+            <form>
+                <div class="form-group">
+                    <input type="email" id="email" name="email" placeholder="Email registered" required>
+                </div>
+                <div class="form-group">
+                    <input type="password" id="password" name="password" placeholder="Password" required>
+                </div>
+                <div class="forgot-password">
+                    <a href="#">Forgot password?</a>
+                </div>
+                <button type="submit" class="submit-btn">Login</button>
+            </form>
+        </div>
+        <div class="login-form hidden" id="registerForm">
+            <form>
+                <div class="form-group">
+                    <input type="text" id="reg-name" name="name" placeholder="Name" required>
+                </div>
+                <div class="form-group">
+                    <input type="date" id="reg-dob" name="dob" placeholder="Date of Birth" required>
+                </div>
+                <div class="form-group">
+                    <input type="tel" id="reg-phone" name="phone" placeholder="Phone Number" required>
+                </div>
+                <div class="form-group">
+                    <input type="email" id="reg-email" name="email" placeholder="Email" required>
+                </div>
+                <div class="form-group">
+                    <input type="email" id="reg-confirm-email" name="confirm-email" placeholder="Confirm Email" required>
+                </div>
+                <div class="form-group">
+                    <input type="password" id="reg-password" name="password" placeholder="Password" required>
+                </div>
+                <div class="form-group">
+                    <input type="password" id="reg-confirm-password" name="confirm-password" placeholder="Confirm Password" required>
+                </div>
+                <div class="form-group checkbox-group">
+                    <input type="checkbox" id="terms" name="terms" required>
+                    <label for="terms">I agree to Kaiora's Terms and Conditions for products and services</label>
+                </div>
+                <button type="submit" class="submit-btn">Create Account</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-text">
+                    © 2025 Kaiora. All rights reserved.
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script>
+                // Theme functionality (copied from main page)
+                const initTheme = () => {
+                    const savedTheme = localStorage.getItem('kaiora-theme') || 'dark';
+                    document.documentElement.setAttribute('data-theme', savedTheme);
+                    updateThemeIcon(savedTheme);
+                };
+
+                const updateThemeIcon = (theme) => {
+                    const sunIcon = document.querySelector('.sun-icon');
+                    const moonIcon = document.querySelector('.moon-icon');
+                    if (!sunIcon || !moonIcon) return;
+                    if (theme === 'light') {
+                        sunIcon.style.display = 'none';
+                        moonIcon.style.display = '';
+                    } else {
+                        sunIcon.style.display = '';
+                        moonIcon.style.display = 'none';
+                    }
+                };
+
+                const toggleTheme = () => {
+                    const currentTheme = document.documentElement.getAttribute('data-theme');
+                    const newTheme = currentTheme === 'light' ? 'dark' : 'light';
+                    document.documentElement.setAttribute('data-theme', newTheme);
+                    localStorage.setItem('kaiora-theme', newTheme);
+                    updateThemeIcon(newTheme);
+                };
+
+                // Initialize theme
+                initTheme();
+
+                // Theme toggle event
+                document.querySelector('.theme-toggle').addEventListener('click', toggleTheme);
+
+                // Menu functionality (copied from main page)
+                const menuToggle = document.querySelector('.menu-toggle');
+                const menuPanel = document.querySelector('.menu-panel');
+                const menuOverlay = document.querySelector('.menu-overlay');
+
+                menuToggle.addEventListener('click', function(e) {
+                    e.stopPropagation();
+                    menuPanel.classList.toggle('open');
+                    menuOverlay.classList.toggle('open');
+                });
+
+                document.addEventListener('mousedown', function(e) {
+                    if (menuPanel.classList.contains('open')) {
+                        if (!e.target.closest('.menu-panel, .menu-toggle')) {
+                            menuPanel.classList.remove('open');
+                            menuOverlay.classList.remove('open');
+                        }
+                    }
+                });
+
+                menuOverlay.addEventListener('click', function() {
+                    menuPanel.classList.remove('open');
+                    menuOverlay.classList.remove('open');
+                });
+
+                // Show login/register forms
+                function showLoginForm() {
+                        document.querySelector('#loginForm').classList.remove('hidden');
+                        document.querySelector('#registerForm').classList.add('hidden');
+                        document.querySelectorAll('.login-option').forEach(opt => opt.classList.remove('active'));
+                        document.querySelector('.login-option:first-child').classList.add('active');
+                }
+
+                function showRegisterForm() {
+                        document.querySelector('#loginForm').classList.add('hidden');
+                        document.querySelector('#registerForm').classList.remove('hidden');
+                        document.querySelectorAll('.login-option').forEach(opt => opt.classList.remove('active'));
+                        document.querySelector('.login-option:last-child').classList.add('active');
+                }
+
+                // Show login form by default
+                showLoginForm();
+    </script>
+</body>
+
+        

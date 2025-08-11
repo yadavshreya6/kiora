@@ -1,0 +1,649 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Essence - Luxury Fragrances</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@300;400;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="perfumes.css" />
+  <link rel="icon" href="Favicon.png" type="image/x-png">
+  <style>
+    /* Search Button and Dropdown */
+    .search-btn {
+        background: none;
+        border: none;
+        padding: 8px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: transform 0.3s ease;
+        z-index: 21;
+        cursor: pointer;
+        position: relative;
+    }
+  .search-dropdown {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    width: 340px;
+    background: rgba(20, 20, 20, 0.98);
+    border-radius: 12px;
+    padding: 18px 0 10px 0;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-10px);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    z-index: 100;
+    box-shadow: 0 8px 32px rgba(212,175,55,0.13), 0 2px 8px rgba(0,0,0,0.18);
+    border: 1.5px solid #d4af37;
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+  }
+  .search-dropdown.active {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+  }
+  .search-dropdown .product-category {
+    padding: 0 28px 0 28px;
+    margin-bottom: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .search-dropdown .category-link {
+    text-decoration: none;
+    color: #d4af37;
+    font-size: 1.13rem;
+    font-weight: 600;
+    letter-spacing: 0.03em;
+    margin-bottom: 2px;
+    margin-top: 2px;
+    transition: color 0.2s;
+    cursor: pointer;
+    border-radius: 4px;
+    padding: 2px 0;
+  }
+  .search-dropdown .category-link:hover {
+    color: #fff;
+    background: linear-gradient(90deg, #d4af37 0%, #8b4e8c 100%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  .search-dropdown .category-description {
+    color: #e8e8e8;
+    font-size: 0.98rem;
+    opacity: 0.82;
+    margin-bottom: 8px;
+    margin-top: 0;
+    font-weight: 400;
+  }
+  .search-dropdown .dropdown-divider {
+    width: 85%;
+    height: 1.5px;
+    background: linear-gradient(90deg, #d4af37 0%, #8b4e8c 100%);
+    margin: 12px auto 12px auto;
+    border: none;
+    border-radius: 2px;
+    opacity: 0.7;
+  }
+  </style>
+  <link rel="icon" href="D:\Term 7\Web Based Development\redraft own website\loading page animation\rr\copy\Untitled (500 x 500 px).png" type="image/x-png">
+  
+</head>
+<body>
+  <div class="progress"></div>
+  <div class="menu-overlay"></div>
+  
+<div class="menu-panel">
+    <nav class="menu-items">
+      <a href="Main Page.html" class="menu-link">Home</a>
+      <a href="lifestyle.html" class="menu-link">KAIORA LIFESTYLE</a>
+      <a href="personalisation.html" class="menu-link">MY KAIORA</a>
+      <a href="inspiring authenticity.html" class="menu-link">INSPIRING Authenticity</a>
+      <a href="contact-us.html" class="menu-link">CONTACT US</a>
+    </nav>
+  </div>
+
+  <header class="header">
+    <button class="menu-toggle" aria-label="Open menu">
+      <span></span><span></span><span></span>
+    </button>
+    <a href="#" class="logo">KAIORA</a>
+    <div class="header-actions">
+      <a href="loginpage.html" class="login-link" aria-label="Login" style="display:inline-flex;align-items:center;margin-right:0.5rem;">
+          <svg class="person-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="8" r="4"/>
+            <path d="M4 20c0-4 4-6 8-6s8 2 8 6"/>
+          </svg>
+        </a>
+      <button class="theme-toggle" aria-label="Toggle theme">
+        <svg class="theme-icon" viewBox="0 0 24 24">
+          <path class="sun-icon" d="M12,18A6,6 0 0,1 6,12A6,6 0 0,1 12,6A6,6 0 0,1 18,12A6,6 0 0,1 12,18M12,4A8,8 0 0,0 4,12A8,8 0 0,0 12,20A8,8 0 0,0 20,12A8,8 0 0,0 12,4M12,2L14.39,5.42C13.65,5.15 12.84,5 12,5C11.16,5 10.35,5.15 9.61,5.42L12,2M3.34,7L7.5,6.65C6.9,7.16 6.36,7.78 5.94,8.5C5.5,9.24 5.25,10 5.11,10.79L3.34,7M3.36,17L5.12,13.21C5.26,14 5.53,14.78 5.95,15.5C6.37,16.24 6.91,16.86 7.5,17.37L3.36,17M20.65,7L18.88,10.79C18.74,10 18.47,9.24 18.05,8.5C17.63,7.78 17.1,7.15 16.5,6.64L20.65,7M20.64,17L16.5,17.36C17.09,16.85 17.62,16.22 18.04,15.5C18.46,14.77 18.73,14 18.87,13.21L20.64,17Z"/>
+          <path class="moon-icon" style="display:none;" d="M17.75,4.09L15.22,6.03L16.13,9.09L13.5,7.28L10.87,9.09L11.78,6.03L9.25,4.09L12.44,4L13.5,1L14.56,4L17.75,4.09M21.25,11L19.61,12.25L20.2,14.23L18.5,13.06L16.8,14.23L17.39,12.25L15.75,11L17.81,10.95L18.5,9L19.19,10.95L21.25,11M18.97,15.95C19.8,15.87 20.69,17.05 20.16,17.8C19.84,18.25 19.5,18.67 19.08,19.07C15.17,23 8.84,23 4.94,19.07C1.03,15.17 1.03,8.83 4.94,4.93C5.34,4.53 5.76,4.17 6.21,3.85C6.96,3.32 8.14,4.21 8.06,5.04C7.79,7.9 8.75,10.87 10.95,13.06C13.14,15.26 16.1,16.22 18.97,15.95M17.33,17.97C14.5,17.81 11.7,16.64 9.53,14.5C7.36,12.31 6.2,9.5 6.04,6.68C3.23,9.82 3.34,14.4 6.35,17.41C9.37,20.43 14,20.54 17.33,17.97Z"/>
+        </svg>
+      </button>
+      <button class="search-btn" aria-label="Search">
+        <svg viewBox="0 0 24 24"><path d="M15.5,14h-0.79l-0.28-0.27A6.471,6.471,0,0,0,16,9.5,6.5,6.5,0,1,0,9.5,16a6.471,6.471,0,0,0,4.23-1.57l0.27,0.28v0.79l5,4.99L20.49,19Zm-6,0A4.5,4.5,0,1,1,14,9.5,4.505,4.505,0,0,1,9.5,14Z"/></svg>
+      </button>
+      <div class="search-dropdown">
+        <div class="product-category">
+          <a class="category-link" href="watches.html">Watches</a>
+          <p class="category-description">Experience silent luxury with our timeless collection of expertly crafted timepieces, where elegance meets understated sophistication.</p>
+        </div>
+        <div class="dropdown-divider"></div>
+        <div class="product-category">
+          <a class="category-link" href="perfumes.html">Perfumes</a>
+          <p class="category-description">Discover your signature scent from our curated collection of artisanal fragrances, each telling its own unique story.</p>
+        </div>
+        <div class="dropdown-divider"></div>
+        <div class="product-category">
+          <a class="category-link" href="ringwatch.html">Ring Watches</a>
+          <p class="category-description">Blend sophistication with innovation through our collection of ring watches, where composed elegance meets contemporary design.</p>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="hero-content">
+      <div class="hero-text">
+        <p class="hero-pretitle">Discover Your Signature</p>
+        <h1 class="hero-title">Liquid Poetry</h1>
+        <p class="hero-subtitle">Luxury Fragrances</p>
+        <p class="hero-description">Experience the art of scent where each fragrance tells a story. Our collection captures emotions, memories, and dreams in every precious drop.</p>
+        <a href="#collections" class="cta-button">Explore Collection</a>
+      </div>
+      <div class="hero-bottle">
+        <div class="bottle-container">
+          <div class="bottle" id="heroBottle">
+            <div class="bottle-cap"></div>
+            <div class="bottle-neck"></div>
+            <div class="bottle-body"></div>
+            <div class="bottle-label">ESSENCE</div>
+          </div>
+          <div class="fragrance-particles">
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+
+  <div class="modal-3d-overlay" id="modal3dOverlay">
+    <div class="modal-3d" id="modal3d">
+      <button class="modal-3d-close" id="modal3dClose" aria-label="Close">&times;</button>
+      <div class="modal-3d-title" id="modal3dTitle">Perfume 3D View</div>
+      <div class="modal-3d-canvas" id="modal3dCanvas"></div>
+    </div>
+  </div>
+
+  <section class="collections" id="collections">
+  <script>
+  // 3D Modal logic for Perfumes
+  const modal3dOverlay = document.getElementById('modal3dOverlay');
+  const modal3dClose = document.getElementById('modal3dClose');
+  const modal3dCanvas = document.getElementById('modal3dCanvas');
+  const modal3dTitle = document.getElementById('modal3dTitle');
+
+  // Perfume names for modal title
+  const perfumeTitles = [
+    'Crimson Passion',
+    'Velvet Dreams',
+    'Golden Amber',
+    'Emerald Garden'
+  ];
+  // Use the same Sketchfab model for all perfumes (can be changed per perfume if needed)
+  const perfumeSketchfab = [
+  `<div class="sketchfab-embed-wrapper" style="width:100%;height:100%;display:flex;align-items:center;justify-content:center;"> <iframe title="perfume1" width="100%" height="100%" style="width:100%;height:100%;border-radius:12px;background:#222;" frameborder="0" allowfullscreen mozallowfullscreen="true" webkitallowfullscreen="true" allow="autoplay; fullscreen; xr-spatial-tracking" xr-spatial-tracking execution-while-out-of-viewport execution-while-not-rendered web-share src="https://sketchfab.com/models/917101580f9b4cc0b2e0e9ccb9355791/embed"></iframe> <p style="font-size: 13px; font-weight: normal; margin: 5px; color: #4A4A4A;"> <a href="https://sketchfab.com/3d-models/perfume1-917101580f9b4cc0b2e0e9ccb9355791?utm_medium=embed&utm_campaign=share-popup&utm_content=917101580f9b4cc0b2e0e9ccb9355791" target="_blank" rel="nofollow" style="font-weight: bold; color: #1CAAD9;"> </a> <a href="https://sketchfab.com/ipm05kshitijj?utm_medium=embed&utm_campaign=share-popup&utm_content=917101580f9b4cc0b2e0e9ccb9355791" target="_blank" rel="nofollow" style="font-weight: bold; color: #1CAAD9;"> </a> <a href="https://sketchfab.com?utm_medium=embed&utm_campaign=share-popup&utm_content=917101580f9b4cc0b2e0e9ccb9355791" target="_blank" rel="nofollow" style="font-weight: bold; color: #1CAAD9;"></a></p></div>`,
+  `<div class="sketchfab-embed-wrapper" style="width:100%;height:100%;display:flex;align-items:center;justify-content:center;"> <iframe title="perfume2" width="100%" height="100%" style="width:100%;height:100%;border-radius:12px;background:#222;" frameborder="0" allowfullscreen mozallowfullscreen="true" webkitallowfullscreen="true" allow="autoplay; fullscreen; xr-spatial-tracking" xr-spatial-tracking execution-while-out-of-viewport execution-while-not-rendered web-share src="https://sketchfab.com/models/03e73ec1a69f4d42b2ad516ecc659120/embed"></iframe> <p style="font-size: 13px; font-weight: normal; margin: 5px; color: #4A4A4A;"> <a href="https://sketchfab.com/3d-models/perfume2-03e73ec1a69f4d42b2ad516ecc659120?utm_medium=embed&utm_campaign=share-popup&utm_content=03e73ec1a69f4d42b2ad516ecc659120" target="_blank" rel="nofollow" style="font-weight: bold; color: #1CAAD9;"> </a> <a href="https://sketchfab.com/ipm05kshitijj?utm_medium=embed&utm_campaign=share-popup&utm_content=03e73ec1a69f4d42b2ad516ecc659120" target="_blank" rel="nofollow" style="font-weight: bold; color: #1CAAD9;"> </a> <a href="https://sketchfab.com?utm_medium=embed&utm_campaign=share-popup&utm_content=03e73ec1a69f4d42b2ad516ecc659120" target="_blank" rel="nofollow" style="font-weight: bold; color: #1CAAD9;"></a></p></div>`,
+
+  ];
+
+  function open3DModal(index) {
+    // Scroll modal to Signature Collection section
+    const collectionSection = document.querySelector('.collections');
+    let sectionTop = 0;
+    if (collectionSection) {
+      const rect = collectionSection.getBoundingClientRect();
+      sectionTop = rect.top + window.scrollY;
+    }
+    const modal = document.getElementById('modal3d');
+    modal.style.top = sectionTop + 'px';
+    modal3dOverlay.style.display = 'block';
+    modal3dTitle.textContent = perfumeTitles[index] + ' - 3D View';
+    modal3dCanvas.innerHTML = '';
+    modal3dCanvas.innerHTML = perfumeSketchfab[index];
+  }
+
+  function close3DModal() {
+    modal3dOverlay.style.display = 'none';
+    modal3dCanvas.innerHTML = '';
+  }
+  modal3dClose.onclick = close3DModal;
+  modal3dOverlay.onclick = function(e) { if (e.target === modal3dOverlay) close3DModal(); };
+  document.addEventListener('keydown', function(e) { if (e.key === 'Escape') close3DModal(); });
+
+  // Attach to all Discover buttons
+  document.addEventListener('DOMContentLoaded', function() {
+    const discoverBtns = document.querySelectorAll('.perfume-card .btn');
+    discoverBtns.forEach((btn, idx) => {
+      btn.addEventListener('click', function(e) {
+        e.preventDefault();
+        open3DModal(idx);
+      });
+    });
+  });
+  </script>
+    <div class="section-header">
+      <h2 class="section-title">Signature Collection</h2>
+      <p class="section-subtitle">Crafted for the Connoisseur of Fine Fragrances</p>
+    </div>
+
+    <div class="perfume-grid" style="display: flex; justify-content: center; align-items: center; gap: 48px;">
+      <div class="perfume-card">
+        <div class="perfume-bottle">
+          <img src="D:\Term 7\Web Based Development\redraft own website\loading page animation\rr\Renders\perfume1female.png" alt="Crimson Passion Perfume" class="perfume-img" />
+        </div>
+        <div class="perfume-info">
+          <h3 class="perfume-name">Crimson Passion</h3>
+          <p class="perfume-type">Eau de Parfum</p>
+          <p class="perfume-price">₹15,200</p>
+          <ul class="notes-list">
+            <li>Top: Red Apple, Cinnamon</li>
+            <li>Heart: Red Rose, Carnation</li>
+            <li>Base: Vanilla, Patchouli</li>
+          </ul>
+          <button class="btn">Discover</button>
+        </div>
+      </div>
+
+      <div class="perfume-card">
+        <div class="perfume-bottle">
+          <img src="D:\Term 7\Web Based Development\redraft own website\loading page animation\rr\Renders\perfume1male.png" alt="Velvet Dreams Perfume" class="perfume-img" />
+        </div>
+        
+  <style>
+    .perfume-bottle {
+      width: 100%;
+      height: 260px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: none;
+      padding: 0;
+      margin: 0;
+    }
+    .perfume-img {
+      width: auto;
+      height: 100%;
+      max-width: 180px;
+      max-height: 260px;
+      min-width: 80px;
+      min-height: 120px;
+      object-fit: cover;
+      border-radius: 18px;
+      box-shadow: 0 4px 18px rgba(0,0,0,0.10);
+      background: #f7f7f7;
+      display: block;
+    }
+  </style>
+        <div class="perfume-info">
+          <h3 class="perfume-name">Velvet Dreams</h3>
+          <p class="perfume-type">Eau de Parfum</p>
+          <p class="perfume-price">₹18,750</p>
+          <ul class="notes-list">
+            <li>Top: Black Currant, Pink Pepper</li>
+            <li>Heart: Iris, Violet</li>
+            <li>Base: Cashmere, White Musk</li>
+          </ul>
+          <button class="btn">Discover</button>
+        </div>
+      </div>
+
+
+  <script>
+    // Theme functionality
+    function initTheme() {
+      const savedTheme = localStorage.getItem('essence-theme') || 'dark';
+      document.documentElement.setAttribute('data-theme', savedTheme);
+      updateThemeIcon(savedTheme);
+    }
+
+    function updateThemeIcon(theme) {
+      const sunIcon = document.querySelector('.sun-icon');
+      const moonIcon = document.querySelector('.moon-icon');
+      
+      if (theme === 'light') {
+        sunIcon.style.display = 'none';
+        moonIcon.style.display = 'block';
+      } else {
+        sunIcon.style.display = 'block';
+        moonIcon.style.display = 'none';
+      }
+    }
+
+    function toggleTheme() {
+      const currentTheme = document.documentElement.getAttribute('data-theme');
+      const newTheme = currentTheme === 'light' ? 'dark' : 'light';
+      
+      document.documentElement.setAttribute('data-theme', newTheme);
+      localStorage.setItem('essence-theme', newTheme);
+      updateThemeIcon(newTheme);
+    }
+
+    initTheme();
+    document.querySelector('.theme-toggle').addEventListener('click', toggleTheme);
+
+    // Menu functionality (same as original)
+    const menuToggle = document.querySelector('.menu-toggle');
+    const menuPanel = document.querySelector('.menu-panel');
+    const menuOverlay = document.querySelector('.menu-overlay');
+
+    menuToggle.addEventListener('click', (e) => {
+      e.stopPropagation();
+      menuPanel.classList.toggle('open');
+      menuOverlay.classList.toggle('open');
+    });
+
+    document.addEventListener('mousedown', (e) => {
+      if (menuPanel.classList.contains('open')) {
+        if (!menuPanel.contains(e.target) && !menuToggle.contains(e.target)) {
+          menuPanel.classList.remove('open');
+          menuOverlay.classList.remove('open');
+        }
+      }
+    });
+
+    menuOverlay.addEventListener('click', () => {
+      menuPanel.classList.remove('open');
+      menuOverlay.classList.remove('open');
+    });
+
+    // Scroll progress
+    window.addEventListener('scroll', () => {
+      const scrollTop = window.pageYOffset;
+      const documentHeight = document.documentElement.scrollHeight - window.innerHeight;
+      const scrollPercent = Math.min((scrollTop / documentHeight) * 100, 100);
+      document.querySelector('.progress').style.width = scrollPercent + '%';
+    });
+
+  // Search dropdown functionality
+  const searchBtn = document.querySelector('.search-btn');
+  const searchDropdown = document.querySelector('.search-dropdown');
+
+  searchBtn.addEventListener('click', (e) => {
+    e.stopPropagation();
+    searchDropdown.classList.toggle('active');
+  });
+
+  searchDropdown.addEventListener('click', (e) => {
+    e.stopPropagation();
+  });
+
+  // Close dropdown on escape key or click outside
+  document.addEventListener('keyup', (e) => {
+    if (e.key === 'Escape' && searchDropdown.classList.contains('active')) {
+      closeDropdown();
+    }
+  });
+
+  document.addEventListener('click', () => {
+    if (searchDropdown.classList.contains('active')) {
+      closeDropdown();
+    }
+  });
+
+  function closeDropdown() {
+    searchDropdown.classList.remove('active');
+  }
+    // Intersection Observer for animations
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, {
+      threshold: 0.1,
+      rootMargin: '0px 0px -50px 0px'
+    });
+
+    document.querySelectorAll('.section-header, .perfume-card').forEach(el => {
+      observer.observe(el);
+    });
+
+    // Hero bottle interactive wiggle effect (single declaration)
+    (function() {
+      const heroBottle = document.getElementById('heroBottle');
+      let mouseX = 0, mouseY = 0, targetX = 0, targetY = 0, animFrame;
+      function animateBottle() {
+        mouseX += (targetX - mouseX) * 0.15;
+        mouseY += (targetY - mouseY) * 0.15;
+        if (heroBottle) {
+          const now = Date.now() / 400;
+          const wiggleX = Math.sin(now) * 3;
+          const wiggleY = Math.cos(now) * 2;
+          heroBottle.style.transform = `rotateY(${mouseX * 12 + wiggleX}deg) rotateX(${-mouseY * 7 + wiggleY}deg) scale(1.04)`;
+        }
+        animFrame = requestAnimationFrame(animateBottle);
+      }
+      document.addEventListener('mousemove', (e) => {
+        const rect = heroBottle.getBoundingClientRect();
+        targetX = ((e.clientX - (rect.left + rect.width/2)) / rect.width) * 1.5;
+        targetY = ((e.clientY - (rect.top + rect.height/2)) / rect.height) * 1.5;
+      });
+      animateBottle();
+    })();
+    // Hero bottle interactive wiggle effect
+    const heroBottle = document.getElementById('heroBottle');
+    let mouseX = 0, mouseY = 0, targetX = 0, targetY = 0, animFrame;
+
+    function animateBottle() {
+      // Smoothly interpolate to target
+      mouseX += (targetX - mouseX) * 0.15;
+      mouseY += (targetY - mouseY) * 0.15;
+      if (heroBottle) {
+        // Wiggle: add a little oscillation based on time
+        const now = Date.now() / 400;
+        const wiggleX = Math.sin(now) * 3;
+        const wiggleY = Math.cos(now) * 2;
+        heroBottle.style.transform = `rotateY(${mouseX * 12 + wiggleX}deg) rotateX(${-mouseY * 7 + wiggleY}deg) scale(1.04)`;
+      }
+      animFrame = requestAnimationFrame(animateBottle);
+    }
+
+    document.addEventListener('mousemove', (e) => {
+      const rect = heroBottle.getBoundingClientRect();
+      // Use relative to bottle center for more direct interaction
+      targetX = ((e.clientX - (rect.left + rect.width/2)) / rect.width) * 1.5;
+      targetY = ((e.clientY - (rect.top + rect.height/2)) / rect.height) * 1.5;
+    });
+
+    animateBottle();
+
+    // Perfume card interactions
+    document.querySelectorAll('.perfume-card').forEach(card => {
+      card.addEventListener('mouseenter', () => {
+        const bottle = card.querySelector('.bottle-svg');
+        bottle.style.filter = 'drop-shadow(0 10px 20px rgba(212,175,55,0.3))';
+      });
+      
+      card.addEventListener('mouseleave', () => {
+        const bottle = card.querySelector('.bottle-svg');
+        bottle.style.filter = 'none';
+      });
+    });
+
+    // Smooth scrolling for CTA button
+    document.querySelector('.cta-button').addEventListener('click', (e) => {
+      e.preventDefault();
+      document.getElementById('collections').scrollIntoView({
+        behavior: 'smooth'
+      });
+    });
+    // --- Customize Your Perfume Section Logic (fixed for DOM ready, now with colored notes) ---
+    document.addEventListener('DOMContentLoaded', function() {
+      const topNotes    = ["Bergamot", "Lemon", "Mint", "Blackcurrant"];
+      const middleNotes = ["Rose", "Jasmine", "Lavender", "Ylang-Ylang"];
+      const baseNotes   = ["Sandalwood", "Cedarwood", "Vanilla", "Vetiver"];
+
+      // Assign a unique color to each note
+      const noteColors = {
+        "Bergamot":    "#ffe066", // yellow
+        "Lemon":       "#fff700", // bright yellow
+        "Mint":        "#3edc81", // green
+        "Blackcurrant":"#6e2b8c", // deep purple
+        "Rose":        "#ff6f91", // pink
+        "Jasmine":     "#fffacd", // pale yellow
+        "Lavender":    "#b57edc", // lavender
+        "Ylang-Ylang": "#ffe29a", // soft yellow
+        "Sandalwood":  "#deb887", // tan
+        "Cedarwood":   "#a0522d", // brown
+        "Vanilla":     "#f3e5ab", // vanilla cream
+        "Vetiver":     "#4e944f"  // earthy green
+      };
+
+      let selectedNotes = { top: 0, middle: 0, base: 0 };
+
+      function createNotePills(containerId, notes, group) {
+        const container = document.getElementById(containerId);
+        if (!container) return;
+        container.innerHTML = "";
+        notes.forEach((note, idx) => {
+          const pill = document.createElement("div");
+          pill.className = "note-pill";
+          pill.textContent = note;
+          pill.tabIndex = 0;
+          pill.setAttribute("role", "button");
+          pill.setAttribute("aria-label", note);
+          // Default: neutral background, colored border
+          pill.style.background = "var(--bg-color)";
+          pill.style.border = `1.5px solid var(--accent-color)`;
+          pill.style.transition = "background 0.2s, color 0.2s, box-shadow 0.2s, border 0.2s";
+          pill.style.color = (note === "Blackcurrant" || note === "Cedarwood" || note === "Vetiver") ? "#fff" : "#222";
+          // On hover: show note color
+          pill.addEventListener("mouseenter", function() {
+            pill.style.background = noteColors[note];
+            pill.style.color = (note === "Blackcurrant" || note === "Cedarwood" || note === "Vetiver") ? "#fff" : "#222";
+          });
+          pill.addEventListener("mouseleave", function() {
+            // If selected, keep selected style, else revert
+            if (idx === selectedNotes[group]) {
+              pill.style.background = noteColors[note];
+              pill.style.color = (note === "Blackcurrant" || note === "Cedarwood" || note === "Vetiver") ? "#fff" : "#222";
+            } else {
+              pill.style.background = "var(--bg-color)";
+              pill.style.color = (note === "Blackcurrant" || note === "Cedarwood" || note === "Vetiver") ? "#fff" : "#222";
+            }
+          });
+          pill.addEventListener("click", function() {
+            selectNote(group, idx);
+          });
+          pill.addEventListener("keydown", function(e) {
+            if (e.key === "Enter" || e.key === " ") {
+              selectNote(group, idx);
+            }
+          });
+          container.appendChild(pill);
+        });
+      }
+
+      function selectNote(group, idx) {
+        selectedNotes[group] = idx;
+        updateSelectedPills();
+      }
+
+      function updateSelectedPills() {
+        ["top", "middle", "base"].forEach(group => {
+          const pills = document.querySelectorAll(`#${group}NoteOptions .note-pill`);
+          const notes = group === "top" ? topNotes : group === "middle" ? middleNotes : baseNotes;
+          pills.forEach((pill, i) => {
+            if (i === selectedNotes[group]) {
+              pill.classList.add("selected");
+              pill.style.background = noteColors[notes[i]];
+              pill.style.border = "3px solid #d4af37";
+              pill.style.boxShadow = "0 0 0 3px rgba(212,175,55,0.18)";
+              pill.style.color = "#111";
+            } else {
+              pill.classList.remove("selected");
+              pill.style.background = "var(--bg-color)";
+              pill.style.border = "1.5px solid var(--accent-color)";
+              pill.style.boxShadow = "none";
+              pill.style.color = "#fff";
+            }
+          });
+        });
+      }
+
+      createNotePills("topNoteOptions", topNotes, "top");
+      createNotePills("middleNoteOptions", middleNotes, "middle");
+      createNotePills("baseNoteOptions", baseNotes, "base");
+      updateSelectedPills();
+
+      const blendBtn = document.getElementById("blendBtn");
+      if (blendBtn) {
+        blendBtn.addEventListener("click", function() {
+          blendBtn.disabled = true;
+          const top    = topNotes[selectedNotes.top];
+          const middle = middleNotes[selectedNotes.middle];
+          const base   = baseNotes[selectedNotes.base];
+          const preview = document.getElementById("blendPreview");
+          preview.textContent = `Your custom scent: ${top} + ${middle} + ${base}`;
+          animateBlend(function() {
+            blendBtn.disabled = false;
+          });
+        });
+      }
+
+      function hexToRgb(hex) {
+        hex = hex.replace('#','');
+        if (hex.length === 3) hex = hex.split('').map(x=>x+x).join('');
+        const num = parseInt(hex, 16);
+        return [num>>16&255, num>>8&255, num&255];
+      }
+      function rgbToHex([r,g,b]) {
+        return "#" + [r,g,b].map(x=>x.toString(16).padStart(2,'0')).join("");
+      }
+
+      function animateBlend(callback) {
+        const anim = document.getElementById("blendAnimation");
+        if (!anim) return;
+        // Show the three circles with the selected note colors
+        const top    = topNotes[selectedNotes.top];
+        const middle = middleNotes[selectedNotes.middle];
+        const base   = baseNotes[selectedNotes.base];
+        const topColor = noteColors[top];
+        const middleColor = noteColors[middle];
+        const baseColor = noteColors[base];
+        anim.innerHTML = `
+          <div class='blend-circle top' style="background:${topColor}; border:2px solid ${topColor};"></div>
+          <div class='blend-circle middle' style="background:${middleColor}; border:2px solid ${middleColor};"></div>
+          <div class='blend-circle base' style="background:${baseColor}; border:2px solid ${baseColor};"></div>
+        `;
+        // Blend color: average the selected note colors
+        const rgb1 = hexToRgb(topColor);
+        const rgb2 = hexToRgb(middleColor);
+        const rgb3 = hexToRgb(baseColor);
+        const blendRgb = [
+          Math.round((rgb1[0]+rgb2[0]+rgb3[0])/3),
+          Math.round((rgb1[1]+rgb2[1]+rgb3[1])/3),
+          Math.round((rgb1[2]+rgb2[2]+rgb3[2])/3)
+        ];
+        const blendHex = rgbToHex(blendRgb);
+        setTimeout(() => {
+          anim.innerHTML = `<div class='blend-circle merged' style="background:${blendHex}; border: 2px solid ${blendHex};"></div>`;
+          if (typeof callback === 'function') callback();
+        }, 900);
+      }
+    });
+
+  </script>
+</body>
+</html>

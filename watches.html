@@ -1,0 +1,740 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Kaiora Watches - Signature of Seconds</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link href="Favicon.png" rel="icon" type="image/png" />
+  <link rel="stylesheet" href="watchstyles.css">
+</head>
+<body>
+  <!-- Custom cursor removed for debugging -->
+  <div class="progress"></div>
+  
+  <div class="menu-overlay"></div>
+  <div class="menu-panel">
+    <nav class="menu-items">
+      <a href="Main Page.html" class="menu-link">Home</a>
+      <a href="lifestyle.html" class="menu-link">KAIORA LIFESTYLE</a>
+      <a href="personalisation.html" class="menu-link">MY KAIORA</a>
+      <a href="inspiring authenticity.html" class="menu-link">INSPIRING Authenticity</a>
+      <a href="contact-us.html" class="menu-link">CONTACT US</a>
+    </nav>
+  </div>
+
+  <header class="header">
+    <button class="menu-toggle" aria-label="Open menu">
+      <span></span><span></span><span></span>
+    </button>
+  
+      <div class="search-dropdown">
+        <div class="product-category">
+          <a class="category-link" href="watches.html">Watches</a>
+          <p class="category-description">Experience silent luxury with our timeless collection of expertly crafted timepieces, where elegance meets understated sophistication.</p>
+        </div>
+        <div class="dropdown-divider"></div>
+        <div class="product-category">
+          <a class="category-link" href="perfumes.html">Perfumes</a>
+          <p class="category-description">Discover your signature scent from our curated collection of artisanal fragrances, each telling its own unique story.</p>
+        </div>
+        <div class="dropdown-divider"></div>
+        <div class="product-category">
+          <a class="category-link" href="ringwatch.html">Ring Watches</a>
+          <p class="category-description">Blend sophistication with innovation through our collection of ring watches, where composed elegance meets contemporary design.</p>
+        </div>
+      </div>
+    <a href="index.html" class="logo">KAIORA</a>
+    <div class="header-actions">
+      <a href="loginpage.html" class="login-link" aria-label="Login" style="display:inline-flex;align-items:center;margin-right:0.5rem;">
+          <svg class="person-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="8" r="4"/>
+            <path d="M4 20c0-4 4-6 8-6s8 2 8 6"/>
+          </svg>
+        </a>
+      <button class="theme-toggle" aria-label="Toggle theme">
+        <svg class="theme-icon" viewBox="0 0 24 24">
+          <path class="sun-icon" d="M12,18A6,6 0 0,1 6,12A6,6 0 0,1 12,6A6,6 0 0,1 18,12A6,6 0 0,1 12,18M12,4A8,8 0 0,0 4,12A8,8 0 0,0 12,20A8,8 0 0,0 20,12A8,8 0 0,0 12,4M12,2L14.39,5.42C13.65,5.15 12.84,5 12,5C11.16,5 10.35,5.15 9.61,5.42L12,2M3.34,7L7.5,6.65C6.9,7.16 6.36,7.78 5.94,8.5C5.5,9.24 5.25,10 5.11,10.79L3.34,7M3.36,17L5.12,13.21C5.26,14 5.53,14.78 5.95,15.5C6.37,16.24 6.91,16.86 7.5,17.37L3.36,17M20.65,7L18.88,10.79C18.74,10 18.47,9.24 18.05,8.5C17.63,7.78 17.1,7.15 16.5,6.64L20.65,7M20.64,17L16.5,17.36C17.09,16.85 17.62,16.22 18.04,15.5C18.46,14.77 18.73,14 18.87,13.21L20.64,17Z"/>
+          <path class="moon-icon" style="display:none;" d="M17.75,4.09L15.22,6.03L16.13,9.09L13.5,7.28L10.87,9.09L11.78,6.03L9.25,4.09L12.44,4L13.5,1L14.56,4L17.75,4.09M21.25,11L19.61,12.25L20.2,14.23L18.5,13.06L16.8,14.23L17.39,12.25L15.75,11L17.81,10.95L18.5,9L19.19,10.95L21.25,11M18.97,15.95C19.8,15.87 20.69,17.05 20.16,17.8C19.84,18.25 19.5,18.67 19.08,19.07C15.17,23 8.84,23 4.94,19.07C1.03,15.17 1.03,8.83 4.94,4.93C5.34,4.53 5.76,4.17 6.21,3.85C6.96,3.32 8.14,4.21 8.06,5.04C7.79,7.9 8.75,10.87 10.95,13.06C13.14,15.26 16.1,16.22 18.97,15.95M17.33,17.97C14.5,17.81 11.7,16.64 9.53,14.5C7.36,12.31 6.2,9.5 6.04,6.68C3.23,9.82 3.34,14.4 6.35,17.41C9.37,20.43 14,20.54 17.33,17.97Z"/>
+        </svg>
+      </button>
+      <button class="search-btn" aria-label="Search">
+        <svg viewBox="0 0 24 24"><path d="M15.5,14h-0.79l-0.28-0.27A6.471,6.471,0,0,0,16,9.5,6.5,6.5,0,1,0,9.5,16a6.471,6.471,0,0,0,4.23-1.57l0.27,0.28v0.79l5,4.99L20.49,19Zm-6,0A4.5,4.5,0,1,1,14,9.5,4.505,4.505,0,0,1,9.5,14Z"/></svg>
+      </button>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="hero-content">
+      <div class="hero-text">
+        <p class="hero-pretitle">KAIORA PRESENTS</p>
+        <h1 class="hero-title">SIGNATURE OF SECONDS</h1>
+        <p class="hero-subtitle">THE CHRONOSPHERE COLLECTION</p>
+        <p class="hero-description">Experience the pinnacle of Swiss craftsmanship where time becomes art. Each timepiece in our collection represents decades of precision engineering and artistic mastery.</p>
+      </div>
+      <div class="hero-watch">
+        <div class="watch-3d" id="heroWatch"></div>
+      </div>
+    </div>
+    
+    <div class="scroll-indicator">
+      <span class="scroll-text">Explore Collection</span>
+      <div class="scroll-arrow"></div>
+    </div>
+  </section>
+
+  <div class="collections">
+    <div class="section-header">
+      <h2 class="section-title">Men's Collection</h2>
+      <p class="section-subtitle">Precision Crafted for the Modern Gentleman</p>
+    </div>
+
+    <div class="watch-grid">
+      <div class="watch-card">
+        <div class="watch-viewport">
+          <img class="watch-image" src="D:\Term 7\Web Based Development\redraft own website\loading page animation\rr\Renders\watch1final.png" alt="Nautic Chrono" style="width:100%;height:100%;object-fit:cover;border-radius:15px;position:absolute;top:0;left:0;z-index:1;" />
+          <div class="watch-model" style="position:relative;z-index:2;">
+            <div class="loading"></div>
+  
+          </div>
+        </div>
+        <div class="watch-info">
+          <h3 class="watch-name">Nautic Chrono</h3>
+          <p class="watch-collection">Signature Collection</p>
+          <p class="watch-price">₹2,45,000</p>
+          <ul class="watch-features">
+            <li>Swiss Automatic Movement</li>
+            <li>Sapphire Crystal Glass</li>
+            <li>Titanium Case</li>
+            <li>Water Resistant 300m</li>
+            <li>42mm Case Diameter</li>
+          </ul>
+          <button class="btn">View Details</button>
+        </div>
+      </div>
+
+      <div class="watch-card">
+        <div class="watch-viewport">
+          <img class="watch-image" src="D:\Term 7\Web Based Development\redraft own website\loading page animation\rr\Renders\watch2menwithlogo1.png" alt="Lustre Regent" style="width:100%;height:100%;object-fit:cover;border-radius:15px;position:absolute;top:0;left:0;z-index:1;" />
+          <div class="watch-model" style="position:relative;z-index:2;">
+            <div class="loading"></div>
+            
+          </div>
+        </div>
+        <div class="watch-info">
+          <h3 class="watch-name">Lustre Regent</h3>
+          <p class="watch-collection">Heritage Collection</p>
+          <p class="watch-price">₹1,95,000</p>
+          <ul class="watch-features">
+            <li>In-house Movement</li>
+            <li>Rose Gold Accents</li>
+            <li>Leather Strap</li>
+            <li>Date Display</li>
+            <li>40mm Case Diameter</li>
+          </ul>
+          <button class="btn">View Details</button>
+        </div>
+      </div>
+
+      <div class="watch-card">
+        <div class="watch-viewport">
+          <img class="watch-image" src="D:\Term 7\Web Based Development\redraft own website\loading page animation\rr\Renders\watch3menwithlogo.png" alt="Tachyon Sport" style="width:100%;height:100%;object-fit:cover;border-radius:15px;position:absolute;top:0;left:0;z-index:1;" />
+          <div class="watch-model" style="position:relative;z-index:2;">
+            <div class="loading"></div>
+            
+          </div>
+        </div>
+        <div class="watch-info">
+          <h3 class="watch-name">Tachyon Sport</h3>
+          <p class="watch-collection">Sport Collection</p>
+          <p class="watch-price">₹1,75,000</p>
+          <ul class="watch-features">
+            <li>Chronograph Function</li>
+            <li>Ceramic Bezel</li>
+            <li>Steel Bracelet</li>
+            <li>Tachymeter Scale</li>
+            <li>44mm Case Diameter</li>
+          </ul>
+          <button class="btn">View Details</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="section-header">
+      <h2 class="section-title">Women's Collection</h2>
+      <p class="section-subtitle">Elegant Timepieces for the Sophisticated Woman</p>
+    </div>
+
+    <div class="watch-grid">
+      <div class="watch-card">
+        <div class="watch-viewport">
+          <img class="watch-image" src="D:\Term 7\Web Based Development\redraft own website\loading page animation\rr\Renders\womenwatch2again.png" alt="Starlit Elegance" style="width:100%;height:100%;object-fit:cover;border-radius:15px;position:absolute;top:0;left:0;z-index:1;" />
+          <div class="watch-model" style="position:relative;z-index:2;">
+            <div class="loading"></div>
+            
+          </div>
+        </div>
+        <div class="watch-info">
+          <h3 class="watch-name">Starlit Elegance</h3>
+          <p class="watch-collection">Luxury Collection</p>
+          <p class="watch-price">₹3,25,000</p>
+          <ul class="watch-features">
+            <li>Diamond Set Bezel</li>
+            <li>Mother-of-Pearl Dial</li>
+            <li>18k Gold Case</li>
+            <li>Swiss Quartz Movement</li>
+            <li>28mm Case Diameter</li>
+          </ul>
+          <button class="btn">View Details</button>
+        </div>
+      </div>
+
+      <div class="watch-card">
+        <div class="watch-viewport">
+          <img class="watch-image" src="D:\Term 7\Web Based Development\redraft own website\loading page animation\rr\Renders\womenwatch2.png" alt="Blossom Atelier" style="width:100%;height:100%;object-fit:cover;border-radius:15px;position:absolute;top:0;left:0;z-index:1;" />
+          <div class="watch-model" style="position:relative;z-index:2;">
+            <div class="loading"></div>
+            
+          </div>
+        </div>
+        <div class="watch-info">
+          <h3 class="watch-name">Blossom Atelier</h3>
+          <p class="watch-collection">Floral Collection</p>
+          <p class="watch-price">₹2,15,000</p>
+          <ul class="watch-features">
+            <li>Rose Gold Plating</li>
+            <li>Floral Dial Pattern</li>
+            <li>Silk Strap</li>
+            <li>Swiss Movement</li>
+            <li>32mm Case Diameter</li>
+          </ul>
+          <button class="btn">View Details</button>
+        </div>
+      </div>
+
+      <div class="watch-card">
+        <div class="watch-viewport">
+          <img class="watch-image" src="D:\Term 7\Web Based Development\redraft own website\loading page animation\rr\Renders\womenwatch3.png" alt="Celeste Moonphase" style="width:100%;height:100%;object-fit:cover;border-radius:15px;position:absolute;top:0;left:0;z-index:1;" />
+          <div class="watch-model" style="position:relative;z-index:2;">
+            <div class="loading"></div>
+            
+          </div>
+        </div>
+        <div class="watch-info">
+          <h3 class="watch-name">Celeste Moonphase</h3>
+          <p class="watch-collection">Classic Collection</p>
+          <p class="watch-price">₹2,85,000</p>
+          <ul class="watch-features">
+            <li>Moonphase Complication</li>
+            <li>Automatic Movement</li>
+            <li>Platinum Case</li>
+            <li>Sapphire Caseback</li>
+            <li>36mm Case Diameter</li>
+          </ul>
+          <button class="btn">View Details</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+<center><footer class="footer">
+<p class="footer-text">
+            © 2024 Kaiora. Crafted with authenticity and passion in Geneva, Switzerland.
+        </p>
+</footer></center>
+    
+  <!-- Three.js and GLTFLoader for 3D modal -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/loaders/GLTFLoader.js"></script>
+  <div class="modal-3d-overlay" id="modal3dOverlay">
+    <div class="modal-3d" id="modal3d">
+      <button class="modal-3d-close" id="modal3dClose" aria-label="Close">&times;</button>
+      <div class="modal-3d-title" id="modal3dTitle">Watch 3D View</div>
+      <div class="modal-3d-canvas" id="modal3dCanvas"></div>
+    </div>
+  </div>
+
+  <script>
+  // Search dropdown functionality
+  const searchBtn = document.querySelector('.search-btn');
+  const searchDropdown = document.querySelector('.search-dropdown');
+
+  searchBtn.addEventListener('click', (e) => {
+    e.stopPropagation();
+    searchDropdown.classList.toggle('active');
+  });
+
+  searchDropdown.addEventListener('click', (e) => {
+    e.stopPropagation();
+  });
+
+  // Close dropdown on escape key or click outside
+  document.addEventListener('keyup', (e) => {
+    if (e.key === 'Escape' && searchDropdown.classList.contains('active')) {
+      closeDropdown();
+    }
+  });
+
+  document.addEventListener('click', () => {
+    if (searchDropdown.classList.contains('active')) {
+      closeDropdown();
+    }
+  });
+
+  function closeDropdown() {
+    searchDropdown.classList.remove('active');
+  }
+
+  // No need to make headings clickable, links are now on .category-link
+    // 3D Modal logic
+    const modal3dOverlay = document.getElementById('modal3dOverlay');
+    const modal3dClose = document.getElementById('modal3dClose');
+    const modal3dCanvas = document.getElementById('modal3dCanvas');
+    const modal3dTitle = document.getElementById('modal3dTitle');
+    let modalRenderer, modalScene, modalCamera, modalControls, modalModel, modalAnimateId;
+    let currentGLTFUrl = '';
+
+    // Map each watch to a GLTF file (update these paths as needed)
+    const watchGLTFs = [
+      'PATH/TO/chronosphere_elite.gltf',
+      'PATH/TO/heritage_automatic.gltf',
+      'PATH/TO/sport_chronograph.gltf',
+      'PATH/TO/diamond_elegance.gltf',
+      'PATH/TO/rose_garden.gltf',
+      'PATH/TO/moonphase_classic.gltf'
+    ];
+    const watchTitles = [
+      'Nautic Chrono',
+      'Lustre Regent',
+      'Tachyon Sport',
+      'Starlit Elegance',
+      'Blossom Atelier',
+      'Celeste Moonphase'
+    ];
+
+function updateThemeIcon(theme) {
+  const sunIcon = document.querySelector('.sun-icon');
+  const moonIcon = document.querySelector('.moon-icon');
+  const root = document.documentElement;
+
+  if (theme === 'light') {
+    sunIcon.style.display = 'none';
+    moonIcon.style.display = 'block';
+    root.style.setProperty('--modal-bg', '#fff');
+    root.style.setProperty('--modal-canvas-bg', '#f3f3f3');
+  } else {
+    sunIcon.style.display = 'block';
+    moonIcon.style.display = 'none';
+    root.style.setProperty('--modal-bg', '#181818');
+    root.style.setProperty('--modal-canvas-bg', '#222');
+  }
+  // Update Sketchfab iframe background if modal is open
+  const modal3dCanvas = document.getElementById('modal3dCanvas');
+  if (modal3dCanvas) {
+    const iframe = modal3dCanvas.querySelector('iframe');
+    if (iframe) {
+      iframe.style.background = theme === 'light' ? '#f3f3f3' : '#222';
+    }
+  }
+}
+    // Open modal and load 3D model or Sketchfab viewer
+    function open3DModal(index, event) {
+      modal3dOverlay.style.display = 'block';
+      modal3dTitle.textContent = watchTitles[index] + ' - 3D View';
+      // Remove previous renderer or iframe if any
+      modal3dCanvas.innerHTML = '';
+      if (modalRenderer) {
+        modalRenderer.dispose && modalRenderer.dispose();
+        modalRenderer = null;
+      }
+      // Position modal at the top of the men's or women's section
+      const modal = document.getElementById('modal3d');
+      let sectionTop = 0;
+      if (index >= 0 && index <= 2) {
+        // Men's section
+        const menSection = document.querySelectorAll('.section-header')[0];
+        if (menSection) {
+          const rect = menSection.getBoundingClientRect();
+          sectionTop = rect.top + window.scrollY;
+        }
+      } else if (index >= 3 && index <= 5) {
+        // Women's section
+        const womenSection = document.querySelectorAll('.section-header')[1];
+        if (womenSection) {
+          const rect = womenSection.getBoundingClientRect();
+          sectionTop = rect.top + window.scrollY;
+        }
+      }
+      modal.style.top = sectionTop + 'px';
+      // If first, second, third, or any women's watch, show Sketchfab iframe
+      if (index === 0 || index === 1 || index === 2 || index === 3 || index === 4 || index === 5) {
+        const wrapper = document.createElement('div');
+        wrapper.className = 'sketchfab-embed-wrapper';
+        wrapper.style.width = '100%';
+        wrapper.style.height = '100%';
+        if (index === 0) {
+          wrapper.innerHTML = `<iframe title="watch1" frameborder="0" allowfullscreen mozallowfullscreen="true" webkitallowfullscreen="true" allow="autoplay; fullscreen; xr-spatial-tracking" xr-spatial-tracking execution-while-out-of-viewport execution-while-not-rendered web-share src="https://sketchfab.com/models/621102427ba749b6838266ddd9910d5b/embed" style="width:100%;height:100%;min-height:400px;border-radius:12px;background:#222;"></iframe>`;
+        } else if (index === 1) {
+          wrapper.innerHTML = `<iframe title="Watch2" frameborder="0" allowfullscreen mozallowfullscreen="true" webkitallowfullscreen="true" allow="autoplay; fullscreen; xr-spatial-tracking" xr-spatial-tracking execution-while-out-of-viewport execution-while-not-rendered web-share src="https://sketchfab.com/models/fd8970a3e45444a8b7f6e677c002c6fd/embed" style="width:100%;height:100%;min-height:400px;border-radius:12px;background:#222;"></iframe>`;
+        } else if (index === 2) {
+          wrapper.innerHTML = `<iframe title="Watch3" frameborder="0" allowfullscreen mozallowfullscreen="true" webkitallowfullscreen="true" allow="autoplay; fullscreen; xr-spatial-tracking" xr-spatial-tracking execution-while-out-of-viewport execution-while-not-rendered web-share src="https://sketchfab.com/models/fe395e6572b14546a1043abda466d964/embed" style="width:100%;height:100%;min-height:400px;border-radius:12px;background:#222;"></iframe>`;
+        } else if (index === 3) {
+          wrapper.innerHTML = `<iframe title="WomenWatch3" frameborder="0" allowfullscreen mozallowfullscreen="true" webkitallowfullscreen="true" allow="autoplay; fullscreen; xr-spatial-tracking" xr-spatial-tracking execution-while-out-of-viewport execution-while-not-rendered web-share src="https://sketchfab.com/models/5aed76df0dfe46c6a778df1a2be0a146/embed" style="width:100%;height:100%;min-height:400px;border-radius:12px;background:#222;"></iframe>`;
+        } else if (index === 4) {
+          wrapper.innerHTML = `<iframe title="WomenWatch1" frameborder="0" allowfullscreen mozallowfullscreen="true" webkitallowfullscreen="true" allow="autoplay; fullscreen; xr-spatial-tracking" xr-spatial-tracking execution-while-out-of-viewport execution-while-not-rendered web-share src="https://sketchfab.com/models/e231dd5ab5b64cf2a13ea8e930dc962e/embed" style="width:100%;height:100%;min-height:400px;border-radius:12px;background:#222;"></iframe>`;
+        } else if (index === 5) {
+          wrapper.innerHTML = `<iframe title="WomenWatch2" frameborder="0" allowfullscreen mozallowfullscreen="true" webkitallowfullscreen="true" allow="autoplay; fullscreen; xr-spatial-tracking" xr-spatial-tracking execution-while-out-of-viewport execution-while-not-rendered web-share src="https://sketchfab.com/models/883015dd5278456fb056ef2b996c8d8b/embed" style="width:100%;height:100%;min-height:400px;border-radius:12px;background:#222;"></iframe>`;
+        }
+        modal3dCanvas.appendChild(wrapper);
+        return;
+      }
+      // Otherwise, use Three.js logic for other watches
+      modalScene = new THREE.Scene();
+      modalCamera = new THREE.PerspectiveCamera(60, modal3dCanvas.offsetWidth / modal3dCanvas.offsetHeight, 0.1, 100);
+      modalCamera.position.set(0, 1.2, 3.5);
+      modalRenderer = new THREE.WebGLRenderer({ alpha: true, antialias: true });
+      modalRenderer.setSize(modal3dCanvas.offsetWidth, modal3dCanvas.offsetHeight);
+      modalRenderer.setClearColor(0x000000, 0);
+      modal3dCanvas.appendChild(modalRenderer.domElement);
+      // Lighting
+      modalScene.add(new THREE.AmbientLight(0xffffff, 0.7));
+      const dirLight = new THREE.DirectionalLight(0xffffff, 1.2);
+      dirLight.position.set(5, 10, 7);
+      modalScene.add(dirLight);
+      // Controls (simple orbit)
+      let isDragging = false, prevX = 0, prevY = 0, rotY = 0, rotX = 0;
+      modalRenderer.domElement.style.cursor = 'grab';
+      modalRenderer.domElement.addEventListener('mousedown', e => {
+        isDragging = true; prevX = e.clientX; prevY = e.clientY;
+        modalRenderer.domElement.style.cursor = 'grabbing';
+      });
+      window.addEventListener('mousemove', onDragMove);
+      window.addEventListener('mouseup', onDragEnd);
+      function onDragMove(e) {
+        if (!isDragging) return;
+        rotY += (e.clientX - prevX) * 0.01;
+        rotX += (e.clientY - prevY) * 0.01;
+        if (modalModel) {
+          modalModel.rotation.y = rotY;
+          modalModel.rotation.x = rotX;
+        }
+        prevX = e.clientX; prevY = e.clientY;
+      }
+      function onDragEnd() {
+        isDragging = false;
+        modalRenderer.domElement.style.cursor = 'grab';
+      }
+      // Load GLTF model
+      const loader = new THREE.GLTFLoader();
+      loader.load(watchGLTFs[index], function(gltf) {
+        modalModel = gltf.scene;
+        modalModel.rotation.y = rotY;
+        modalModel.rotation.x = rotX;
+        modalScene.add(modalModel);
+      }, undefined, function(error) {
+        const err = document.createElement('div');
+        err.style.color = '#fff';
+        err.style.textAlign = 'center';
+        err.style.marginTop = '40%';
+        err.textContent = '3D Model not found.';
+        modal3dCanvas.appendChild(err);
+      });
+      // Animate
+      function animate() {
+        modalAnimateId = requestAnimationFrame(animate);
+        if (modalModel && !isDragging) {
+          modalModel.rotation.y += 0.003;
+        }
+        modalRenderer.render(modalScene, modalCamera);
+      }
+      animate();
+      // Resize
+      window.addEventListener('resize', onModalResize);
+      function onModalResize() {
+        if (!modalRenderer) return;
+        modalCamera.aspect = modal3dCanvas.offsetWidth / modal3dCanvas.offsetHeight;
+        modalCamera.updateProjectionMatrix();
+        modalRenderer.setSize(modal3dCanvas.offsetWidth, modal3dCanvas.offsetHeight);
+      }
+    }
+    // Close modal
+    function close3DModal() {
+      modal3dOverlay.style.display = 'none';
+      if (modalRenderer) {
+        modalRenderer.dispose && modalRenderer.dispose();
+        modalRenderer = null;
+      }
+      if (modalAnimateId) cancelAnimationFrame(modalAnimateId);
+      modal3dCanvas.innerHTML = '';
+      window.removeEventListener('mousemove', onDragMove);
+      window.removeEventListener('mouseup', onDragEnd);
+      window.removeEventListener('resize', onModalResize);
+    }
+    modal3dClose.onclick = close3DModal;
+    modal3dOverlay.onclick = function(e) { if (e.target === modal3dOverlay) close3DModal(); };
+    document.addEventListener('keydown', function(e) { if (e.key === 'Escape') close3DModal(); });
+    // Attach to all View Details buttons
+    document.addEventListener('DOMContentLoaded', function() {
+      const viewBtns = document.querySelectorAll('.watch-card .btn');
+      viewBtns.forEach((btn, idx) => {
+        btn.addEventListener('click', function(e) {
+          e.preventDefault();
+          open3DModal(idx, e);
+        });
+      });
+    });
+    // ...existing code...
+    // Custom cursor JS removed for debugging
+
+    // Theme functionality
+    function initTheme() {
+      const savedTheme = localStorage.getItem('kaiora-theme') || 'dark';
+      document.documentElement.setAttribute('data-theme', savedTheme);
+      updateThemeIcon(savedTheme);
+    }
+
+    function updateThemeIcon(theme) {
+      const sunIcon = document.querySelector('.sun-icon');
+      const moonIcon = document.querySelector('.moon-icon');
+      
+      if (theme === 'light') {
+        sunIcon.style.display = 'none';
+        moonIcon.style.display = 'block';
+      } else {
+        sunIcon.style.display = 'block';
+        moonIcon.style.display = 'none';
+      }
+    }
+
+    function toggleTheme() {
+      const currentTheme = document.documentElement.getAttribute('data-theme');
+      const newTheme = currentTheme === 'light' ? 'dark' : 'light';
+      
+      document.documentElement.setAttribute('data-theme', newTheme);
+      localStorage.setItem('kaiora-theme', newTheme);
+      updateThemeIcon(newTheme);
+    }
+
+    initTheme();
+    document.querySelector('.theme-toggle').addEventListener('click', toggleTheme);
+
+    // Menu functionality
+      // Menu functionality
+    const menuToggle = document.querySelector('.menu-toggle');
+    const menuPanel = document.querySelector('.menu-panel');
+    const menuOverlay = document.querySelector('.menu-overlay');
+
+    menuToggle.addEventListener('click', (e) => {
+      e.stopPropagation();
+      menuPanel.classList.toggle('open');
+      menuOverlay.classList.toggle('open');
+    });
+
+    document.addEventListener('mousedown', (e) => {
+      if (menuPanel.classList.contains('open')) {
+        if (!menuPanel.contains(e.target) && !menuToggle.contains(e.target)) {
+          menuPanel.classList.remove('open');
+          menuOverlay.classList.remove('open');
+        }
+      }
+    });
+
+    menuOverlay.addEventListener('click', () => {
+      menuPanel.classList.remove('open');
+      menuOverlay.classList.remove('open');
+    });
+
+    // Scroll progress
+    let scrollRotation = 0;
+    
+    window.addEventListener('scroll', () => {
+      const scrollTop = window.pageYOffset;
+      const documentHeight = document.documentElement.scrollHeight - window.innerHeight;
+      const scrollPercent = Math.min((scrollTop / documentHeight) * 100, 100);
+      
+      document.querySelector('.progress').style.width = scrollPercent + '%';
+      scrollRotation = scrollTop * 0.01;
+    });
+
+    // Intersection Observer for animations
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, {
+      threshold: 0.1,
+      rootMargin: '0px 0px -50px 0px'
+    });
+
+    document.querySelectorAll('.section-header, .watch-card').forEach(el => {
+      observer.observe(el);
+    });
+
+    // 3D Hero Watch - Enhanced cursor compatibility
+    function initHeroWatch() {
+      const viewport = document.getElementById('heroWatch');
+      if (!viewport) return;
+
+      const scene = new THREE.Scene();
+      const camera = new THREE.PerspectiveCamera(75, viewport.offsetWidth / viewport.offsetHeight, 0.1, 1000);
+      const renderer = new THREE.WebGLRenderer({ alpha: true, antialias: true });
+      
+      renderer.setSize(viewport.offsetWidth, viewport.offsetHeight);
+      renderer.setClearColor(0x000000, 0);
+      
+      // Ensure canvas works with custom cursor
+      renderer.domElement.style.pointerEvents = 'auto';
+      
+      const watchGroup = new THREE.Group();
+      
+      const caseGeometry = new THREE.CylinderGeometry(2, 2.2, 0.8, 64);
+      const caseMaterial = new THREE.MeshPhongMaterial({ 
+        color: 0xDDA74F,
+        shininess: 300,
+        specular: 0x222222,
+        transparent: true,
+        opacity: 0.9
+      });
+      const watchCase = new THREE.Mesh(caseGeometry, caseMaterial);
+      watchGroup.add(watchCase);
+
+      const faceGeometry = new THREE.CylinderGeometry(1.8, 1.8, 0.1, 64);
+      const faceMaterial = new THREE.MeshPhongMaterial({ color: 0x000000 });
+      const face = new THREE.Mesh(faceGeometry, faceMaterial);
+      face.position.y = 0.45;
+      watchGroup.add(face);
+
+      const hourHandGeometry = new THREE.BoxGeometry(0.05, 0.8, 0.02);
+      const minuteHandGeometry = new THREE.BoxGeometry(0.03, 1.2, 0.02);
+      const handMaterial = new THREE.MeshPhongMaterial({ color: 0xDDA74F });
+      
+      const hourHand = new THREE.Mesh(hourHandGeometry, handMaterial);
+      const minuteHand = new THREE.Mesh(minuteHandGeometry, handMaterial);
+      
+      hourHand.position.y = 0.5;
+      minuteHand.position.y = 0.5;
+      
+      watchGroup.add(hourHand);
+      watchGroup.add(minuteHand);
+
+      scene.add(watchGroup);
+
+      const ambientLight = new THREE.AmbientLight(0x404040, 0.3);
+      scene.add(ambientLight);
+
+      const directionalLight = new THREE.DirectionalLight(0xffffff, 1);
+      directionalLight.position.set(10, 10, 5);
+      scene.add(directionalLight);
+
+      const pointLight1 = new THREE.PointLight(0xDDA74F, 0.8, 20);
+      pointLight1.position.set(5, 5, 5);
+      scene.add(pointLight1);
+
+      camera.position.set(5, 3, 5);
+      camera.lookAt(0, 0, 0);
+
+      let targetRotationX = 0;
+      let targetRotationY = 0;
+      let viewportMouseX = 0;
+      let viewportMouseY = 0;
+
+      viewport.addEventListener('mousemove', (e) => {
+        const rect = viewport.getBoundingClientRect();
+        viewportMouseX = (e.clientX - rect.left) / rect.width * 2 - 1;
+        viewportMouseY = -(e.clientY - rect.top) / rect.height * 2 + 1;
+        
+        targetRotationX = viewportMouseY * 0.5;
+        targetRotationY = viewportMouseX * 0.5;
+      });
+
+      viewport.addEventListener('mouseleave', () => {
+        targetRotationX = 0;
+        targetRotationY = 0;
+      });
+
+      let time = 0;
+
+      function animate() {
+        requestAnimationFrame(animate);
+        
+        time += 0.01;
+        
+        watchGroup.rotation.y = scrollRotation + time * 0.2;
+        watchGroup.rotation.x = Math.sin(time * 0.5) * 0.1;
+        
+        watchGroup.rotation.x += (targetRotationX - watchGroup.rotation.x) * 0.05;
+        watchGroup.rotation.y += (targetRotationY - watchGroup.rotation.y + scrollRotation) * 0.05;
+        
+        hourHand.rotation.z = time * 0.1;
+        minuteHand.rotation.z = time * 0.5;
+        
+        watchGroup.position.y = Math.sin(time * 0.8) * 0.1;
+        
+        renderer.render(scene, camera);
+      }
+
+      viewport.appendChild(renderer.domElement);
+      animate();
+
+      // Handle window resize
+      window.addEventListener('resize', () => {
+        camera.aspect = viewport.offsetWidth / viewport.offsetHeight;
+        camera.updateProjectionMatrix();
+        renderer.setSize(viewport.offsetWidth, viewport.offsetHeight);
+      });
+    }
+
+    // Collection watch models - simplified and cursor-friendly
+    function initWatchModels() {
+      document.querySelectorAll('.watch-viewport').forEach((viewport, index) => {
+        const scene = new THREE.Scene();
+        const camera = new THREE.PerspectiveCamera(75, viewport.offsetWidth / viewport.offsetHeight, 0.1, 1000);
+        const renderer = new THREE.WebGLRenderer({ alpha: true, antialias: true });
+        
+        renderer.setSize(viewport.offsetWidth, viewport.offsetHeight);
+        renderer.setClearColor(0x000000, 0);
+        
+        setTimeout(() => {
+          const loading = viewport.querySelector('.loading');
+          if (loading) loading.style.display = 'none';
+        }, 500);
+        
+        const geometry = new THREE.CylinderGeometry(1, 1.2, 0.3, 32);
+        const material = new THREE.MeshPhongMaterial({ 
+          color: 0xDDA74F,
+          shininess: 100,
+          specular: 0x111111
+        });
+        const watch = new THREE.Mesh(geometry, material);
+        scene.add(watch);
+
+        const ambientLight = new THREE.AmbientLight(0x404040, 0.4);
+        scene.add(ambientLight);
+
+        const directionalLight = new THREE.DirectionalLight(0xffffff, 0.8);
+        directionalLight.position.set(5, 5, 5);
+        scene.add(directionalLight);
+
+        camera.position.z = 3;
+
+        function animate() {
+          requestAnimationFrame(animate);
+          watch.rotation.y += 0.005;
+          renderer.render(scene, camera);
+        }
+
+        setTimeout(() => {
+          viewport.appendChild(renderer.domElement);
+          animate();
+        }, index * 200);
+      });
+    }
+
+    // Initialize everything
+    initHeroWatch();
+    setTimeout(initWatchModels, 1500);
+  </script>
+</body>
+</html>
